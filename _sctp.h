@@ -90,3 +90,15 @@ struct sctp_prim {
         struct sockaddr_storage ssp_addr;
 };
 #endif
+struct sctp_event_subscribe_common {
+        __u8 sctp_data_io_event;
+        __u8 sctp_association_event;
+        __u8 sctp_address_event;
+        __u8 sctp_send_failure_event;
+        __u8 sctp_peer_error_event;
+        __u8 sctp_shutdown_event;
+        __u8 sctp_partial_delivery_event;
+        __u8 sctp_adaptation_layer_event;
+        __u8 sctp_authentication_event;
+        __u8 sctp_sender_dry_event;
+};

@@ -982,7 +982,7 @@ static PyObject* get_events(PyObject* dummy, PyObject* args)
 {
 	PyObject* ret = 0;
 	int fd;
-	struct sctp_event_subscribe v;
+	struct sctp_event_subscribe_common v;
 	socklen_t lv = sizeof(v);
 
 	if (PyArg_ParseTuple(args, "i", &fd)) {
@@ -1009,7 +1009,7 @@ static PyObject* set_events(PyObject* dummy, PyObject* args)
 	int fd;
 	PyObject *ov, *o_data_io, *o_association, *o_address, *o_send_failure;
 	PyObject *o_peer_error, *o_shutdown, *o_partial_delivery, *o_adaptation_layer;
-	struct sctp_event_subscribe v;
+	struct sctp_event_subscribe_common v;
 	int ok = PyArg_ParseTuple(args, "iO", &fd, &ov) && PyDict_Check(ov);
 
 	ok = ok && (o_data_io = PyDict_GetItemString(ov, "_data_io"));
